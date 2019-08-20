@@ -1,2 +1,12 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<div class="container">
+  <h1>Show your tasks</h1>
+  <% @tasks.each do |i| %>
+    <div id="show-task", style="display: flex">
+
+      <h2><%= link_to i.title, task_path(i) %></h2>
+      <span style="font-size: x-large;">  <%= i.completed == true ? ' ✓ ' : ' ' %></span>
+    </div>
+  <% end %>
+  <p><%= link_to "New", tasks_new_path %></p>
+
+</div>

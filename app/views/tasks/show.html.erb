@@ -1,2 +1,10 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<div class="container">
+  <h1>Tasks</h1>
+  <h3><%= @task.title %></h3>
+  <p><%= @task.details %></p>
+  <p><%= @task.completed %></p>
+  <p><%= link_to "Home", tasks_path %></p>
+  <p><%= link_to "Edit", edit_task_path(@task.id) %></p>
+  <p><%= link_to "Delete", task_path(@task.id), method: "delete",
+      data: { confirm: "Are you sure?"} %></p>
+</div>
